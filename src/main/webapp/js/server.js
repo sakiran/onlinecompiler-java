@@ -38,10 +38,48 @@ var apply = {
     }
 };
 
+var compile = {
+    basic: function() {
+       
+        var customtext = document.getElementById("customtext").value;
+        var code = document.getElementById("content").value;
+        var code = b64EncodeUnicode(code);
+        var mode = document.getElementById("mode").value;
+        var filename = document.getElementById("filename").value;
+        
+        var a = "editor= "+code+"&filename="+filename+"&mode="+mode+"&customtext="+customtext;
+
+        $.ajax({
+            url: "compile",
+            type: "POST",
+            data: a,
+            dataType: "html",
+            contentType: "application/x-www-form-urlencoded",
+            beforeSend: function() {},
+            complete: function() {},
+            error: function(a, b, c) {
+                console.log(c);
+            },
+            success: function(a, b, c) {
+               // var decodedString = atob(a);
+
+                document.getElementById("outputdisplay").innerHTML = " "+a+"";
+                 
+                
+                
+            }
+        });
+    }
+};
 
 
 $(document).on('click', '#run', function() {
 
     apply.basic();
+
+});
+$(document).on('click', '#compile', function() {
+
+    compile.basic();
 
 });

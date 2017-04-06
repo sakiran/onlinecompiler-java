@@ -18,13 +18,13 @@ import javax.servlet.http.HttpServletResponse;
  * Servlet implementation class Server
  */
 
-public class ServerServlet extends HttpServlet {
+public class compile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServerServlet() {
+    public compile() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -61,12 +61,10 @@ public class ServerServlet extends HttpServlet {
         	String code="python";
         	code+=new String(" ");
         	code+=filename;
-                code+=new String(" ");
+		code+=new String(" ");
         	code+=customtext;
         	code+=new String(" ");
-                code+="2>&1";
-
-
+            code+="2>&1";
             
             System.out.println(code);
         	try {
@@ -127,13 +125,9 @@ public class ServerServlet extends HttpServlet {
         	FileOutputStream myfile = new FileOutputStream(f);
         	myfile.write(Base64.getDecoder().decode(editor.trim()));
         	myfile.close();
-		if (filename.indexOf(".") > 0)
-    		filename = filename.substring(0, filename.lastIndexOf("."));
-        	String code="java";
+        	String code="javac";
         	code+=new String(" ");
         	code+=filename;
-                code+=new String(" ");
-        	code+=customtext;
         	//code+=new String(" ");
             //code+="2>&1";
             
@@ -195,10 +189,10 @@ public class ServerServlet extends HttpServlet {
         	String code="php";
         	code+=new String(" ");
         	code+=filename;
-                code+=new String(" ");
+		code+=new String(" ");
         	code+=customtext;
         	code+=new String(" ");
-            code+="2>&1";
+                code+="2>&1";
             
             System.out.println(code);
         	try {
