@@ -63,8 +63,7 @@ public class compile extends HttpServlet {
         	code+=filename;
 		code+=new String(" ");
         	code+=customtext;
-        	code+=new String(" ");
-            code+="2>&1";
+        	
             
             System.out.println(code);
         	try {
@@ -191,8 +190,7 @@ public class compile extends HttpServlet {
         	code+=filename;
 		code+=new String(" ");
         	code+=customtext;
-        	code+=new String(" ");
-                code+="2>&1";
+        	
             
             System.out.println(code);
         	try {

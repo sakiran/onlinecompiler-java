@@ -63,8 +63,7 @@ public class ServerServlet extends HttpServlet {
         	code+=filename;
                 code+=new String(" ");
         	code+=customtext;
-        	code+=new String(" ");
-                code+="2>&1";
+        	
 
 
             
@@ -197,8 +196,7 @@ public class ServerServlet extends HttpServlet {
         	code+=filename;
                 code+=new String(" ");
         	code+=customtext;
-        	code+=new String(" ");
-            code+="2>&1";
+        	
             
             System.out.println(code);
         	try {
